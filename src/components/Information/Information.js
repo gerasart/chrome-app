@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Information.module.scss';
+import {Link} from "react-router-dom";
 
 class Information extends React.Component {
 
@@ -10,7 +11,8 @@ class Information extends React.Component {
     render() {
         return (
             <div className={styles.Information}>
-                Information Component
+                Information
+                <Link to="/">Home</Link>
             </div>
         );
     }
