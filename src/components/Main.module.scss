@@ -38,7 +38,7 @@
   flex-direction: column;
   margin-bottom: 10px;
 
-  input{
+  input {
     margin-bottom: 20px;
     padding: 10px 5px;
     border: none;
@@ -56,11 +56,32 @@
 .btn {
   padding: 10px 0;
   width: 100%;
-  background: #5b5b5b;
+  background: #037dd6;
   text-align: center;
   text-decoration: none;
   color: white;
+  font-weight: 700;
   border-radius: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.btn_neg {
+  padding: 10px 0;
+  width: 100%;
+  background: none;
+  text-align: center;
+  text-decoration: none;
+  color: #037dd6;
+  font-weight: 700;
+  border: 1px solid #037dd6;
+  border-radius: 20px;
+}
+
+.text {
+  font-size: 14px;
 }
 
 .header {

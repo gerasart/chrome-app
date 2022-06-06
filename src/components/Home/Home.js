@@ -2,6 +2,9 @@ import React from 'react';
 import styles from './Home.module.scss';
 import main from '../Main.module.scss'
 import {Link} from "react-router-dom";
+// let Mnemonic = require('bitcore-mnemonic');
+// let code = new Mnemonic();
+// let phrase = code.toString();
 
 // /* global chrome */
 class Home extends React.Component {
@@ -13,6 +16,7 @@ class Home extends React.Component {
         // chrome.storage.local.set({key: 'fdsfmdskfldmsfldmfdslk2'}, function () {
         //     console.log('Value is set to ' + 'fdsfmdskfldmsfldmfdslk2');
         // });
+        // this.mnemonicTest();
     }
 
     // testClick() {
@@ -22,6 +26,19 @@ class Home extends React.Component {
     //     chrome.storage.local.get(['key'], function (result) {
     //         console.log('get ',result.key);
     //     });
+    // }
+
+    // mnemonicTest() {
+        // const bitcore = require("bitcore-lib");
+        // const transaction = new bitcore.Transaction();
+        // let Mnemonic = require('bitcore-mnemonic');
+        // let code = new Mnemonic(Mnemonic.Words.ENGLISH);
+        // code.toString();
+        // let xpriv = code.toHDPrivateKey();
+        // console.log(code.toString());
+        // console.log(xpriv);
+
+        // console.log(code.toString());
     // }
 
     render() {

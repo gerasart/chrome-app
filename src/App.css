@@ -1,1 +1,5 @@
-@import "assets/styles/_main.scss";
+@import 'assets/styles/_main.scss';
+.box {
+  width: 500px;
+  height: 500px;
+}

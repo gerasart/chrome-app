@@ -2,7 +2,7 @@ import React from "react";
 import welcome from './Welcome.module.scss';
 import {Link} from "react-router-dom";
 import main from "../../components/Main.module.scss";
-import SelectAction from "../select-action/SelectAction";
+// import SelectAction from "../SelectAction/SelectAction";
 
 export default function Welcome() {
     return (

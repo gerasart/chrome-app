@@ -18,7 +18,7 @@ export default function SelectAction() {
                     <div className={main.h4}>
                         Import an existing wallet using the initial recovery passphrase
                     </div>
-                    <Link to="/privacy" className={main.btn}>
+                    <Link to="/import-with-seed-phrase" className={main.btn}>
                         Import wallet
                     </Link>
                 </div>
@@ -29,7 +29,7 @@ export default function SelectAction() {
                     <div className={main.h4}>
                         This will create a new wallet and recovery passphrase
                     </div>
-                    <Link to="/privacy" className={main.btn}>
+                    <Link to="/create-password" className={main.btn}>
                         Create wallet
                     </Link>
                 </div>
