@@ -1,11 +1,6 @@
 import React from 'react';
 import phrase from './ImportPhrase.module.css'
 import main from '../../components/Main.module.scss'
-// const Mnemonic = require('bitcore-mnemonic');
-// const code = new Mnemonic(Mnemonic.Words.ENGLISH);
-// code.toString();
-
-
 
 export default function ImportPhrase() {
     return (

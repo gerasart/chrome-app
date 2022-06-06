@@ -4,7 +4,6 @@ import main from '../../components/Main.module.scss'
 import {Link} from "react-router-dom";
 import {TextField} from "@mui/material";
 
-
 export default function PasswordCreate() {
     return (
         <div className={password.PasswordCreate}>
@@ -25,7 +24,6 @@ export default function PasswordCreate() {
             <Link to='/seed-phrase' className={main.btn}>
                 Create
             </Link>
-
         </div>
     )
 }

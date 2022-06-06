@@ -1,4 +1,13 @@
 > support node version >= 17.1.0
 
-> npm run start
-> npm run build-static
+> Manifest 3 version.
+
+**commands**
+
+`npm run start`
+
+`npm run build`
+
+**test browser extension**
+1. npm run build
+2. choose build folder.

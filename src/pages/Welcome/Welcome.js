@@ -2,7 +2,6 @@ import React from "react";
 import welcome from './Welcome.module.scss';
 import {Link} from "react-router-dom";
 import main from "../../components/Main.module.scss";
-// import SelectAction from "../SelectAction/SelectAction";
 
 export default function Welcome() {
     return (
@@ -18,11 +17,6 @@ export default function Welcome() {
             <Link to="/select-action" className={main.btn}>
                 Start
             </Link>
-
-            {/*<Link to="/Home" className={main.btn}>*/}
-            {/*    Start*/}
-            {/*</Link>*/}
-
         </div>
     )
 }
