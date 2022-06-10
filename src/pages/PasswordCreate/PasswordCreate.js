@@ -1,12 +1,12 @@
-import React from "react";
-import './PasswordCreate.scss'
-import main from '../../components/Main.module.scss'
-import {Link} from "react-router-dom";
-import {useDispatch} from 'react-redux';
-import {setPinCode} from '../../store/slices/user';
+import { useRef, useState } from "react";
+import PinField from "react-pin-field";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import PinField from "react-pin-field"
-import {useRef, useState} from 'react';
+import main from "../../components/Main.module.scss";
+import extensionStore from "../../helper/local-store";
+import { setPinCode } from "../../store/slices/user";
+import "./PasswordCreate.scss";
 
 export default function PasswordCreate() {
     const [pin, setPin] = useState("");
@@ -15,33 +15,23 @@ export default function PasswordCreate() {
     const ref = useRef([]);
     const dispatch = useDispatch();
 
-    function createPin() {
-        ref.current.forEach(input => (input.value = ""))
+    async function createPin() {
+        ref.current.forEach((input) => (input.value = ""));
         setConfirmPin(true);
 
-        let Mnemonic = require('bitcore-mnemonic');
+        let Mnemonic = require("bitcore-mnemonic");
         let code = new Mnemonic(Mnemonic.pinCode);
         let pinPrivate = code.toHDPrivateKey();
-
+        await extensionStore.set("pinCode", pinPrivate.xprivkey);
         dispatch(setPinCode(pinPrivate.xprivkey));
-        chrome.storage.local.set({pinCode: pinPrivate.xprivkey}, function () {
-        })
-    }
-
-    function testClick() {
-        chrome.storage.local.get(['pinCode'], function (result) {
-            console.log('get', result);
-        })
     }
 
     return (
         <>
             {confirmPin === false ? (
                 <div className="PasswordCreate">
-                    <Header/>
-                    <div className={main.h1}>
-                        Create pin code
-                    </div>
+                    <Header />
+                    <div className={main.h1}>Create pin code</div>
                     <div className="pin-code">
                         <PinField
                             ref={ref}
@@ -52,21 +42,14 @@ export default function PasswordCreate() {
                             validate={/^[a-zA-Z0-9]$/}
                         />
                     </div>
-                    <button
-                        onClick={createPin}
-                        disabled={pin.length < 6}
-                    >
+                    <button onClick={createPin} disabled={pin.length < 6}>
                         Next
                     </button>
-
-
                 </div>
             ) : confirmPin === true ? (
                 <div className="PasswordCreate">
-                    <Header/>
-                    <div className={main.h1}>
-                        Confirm pin code
-                    </div>
+                    <Header />
+                    <div className={main.h1}>Confirm pin code</div>
                     <div className="pin-code">
                         <PinField
                             ref={ref}
@@ -77,7 +60,7 @@ export default function PasswordCreate() {
                             validate={/^[a-zA-Z0-9]$/}
                         />
                     </div>
-                    <Link to='/seed-phrase'>
+                    <Link to="/seed-phrase">
                         <button
                             disabled={pin !== confirmPinCode}
                             className="pin-code_btn"
@@ -85,16 +68,11 @@ export default function PasswordCreate() {
                             Confirm
                         </button>
                     </Link>
-                    <button
-                        onClick={testClick}
-                    >
-                        test
-                    </button>
                 </div>
             ) : null}
         </>
-    )
+    );
 }
 
-
 // together relief will manage option rely all clown salad burst whale speed
+

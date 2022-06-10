@@ -1,21 +1,30 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
-  name: 'user',
-  initialState: {
-    phrase: '',
-    pinCode: '',
-  },
-  reducers: {
-    setPhrase(state, action) {
-      state.phrase = action.payload;
+    name: "user",
+    initialState: {
+        isCloseBrowser: false,
+        isAuth: false,
+        phrase: "",
+        pinCode: "",
     },
-    setPinCode(state, action) {
-      state.pinCode = action.payload;
-    }
-  },
+    reducers: {
+        setPhrase(state, action) {
+            state.phrase = action.payload;
+        },
+        setPinCode(state, action) {
+            state.pinCode = action.payload;
+        },
+        setIsAuth(state, action) {
+            state.isAuth = action.payload;
+        },
+        setIsCloseBrowser(state, action) {
+            state.isCloseBrowser = action.payload;
+        },
+    },
 });
 
-export const { setPhrase, setPinCode } = userSlice.actions;
+export const { setPhrase, setPinCode, setIsAuth } = userSlice.actions;
 
 export default userSlice.reducer;
+
