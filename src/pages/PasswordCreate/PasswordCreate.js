@@ -1,13 +1,12 @@
-
 import React from "react";
 import './PasswordCreate.scss'
 import main from '../../components/Main.module.scss'
 import {Link} from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {setPinCode} from '../../store/slices/user';
 import Header from "../../components/Header/Header";
 import PinField from "react-pin-field"
-import { useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 
 export default function PasswordCreate() {
     const [pin, setPin] = useState("");
@@ -25,24 +24,14 @@ export default function PasswordCreate() {
         let pinPrivate = code.toHDPrivateKey();
 
         dispatch(setPinCode(pinPrivate.xprivkey));
+        chrome.storage.local.set({pinCode: pinPrivate.xprivkey}, function () {})
     }
 
     function testClick() {
-        chrome.storage.local.set({key: 'loh Zalupa Chmo Mileyko'}, function () {
-            // eslint-disable-next-line no-useless-concat
-            // console.log('value is set to' + 'loh Zalupa Chmo Mileyko');
+        chrome.storage.local.get(['pinCode'], function (result) {
+            console.log('get', result);
         })
-
-        chrome.storage.local.get(['key'], function (result) {
-            console.log('get', result.key);
-        })
-
-        console.log(chrome.storage);
     }
-
-    // visual catalog barrel fantasy only ancient tenant quit fashion transfer purse ketchup
-
-
 
     return (
         <>
@@ -69,12 +58,7 @@ export default function PasswordCreate() {
                         Next
                     </button>
 
-                    <button
-                        onClick={testClick}
 
-                    >
-                        test
-                    </button>
                 </div>
             ) : confirmPin === true ? (
                 <div className="PasswordCreate">
@@ -92,12 +76,18 @@ export default function PasswordCreate() {
                             validate={/^[a-zA-Z0-9]$/}
                         />
                     </div>
-                    <button
-                        disabled={pin !== confirmPinCode}
-                    >
-                        <Link to='/seed-phrase'>
+                    <Link to='/seed-phrase'>
+                        <button
+                            disabled={pin !== confirmPinCode}
+                            className="pin-code_btn"
+                        >
                             Confirm
-                        </Link>
+                        </button>
+                    </Link>
+                    <button
+                        onClick={testClick}
+                    >
+                        test
                     </button>
                 </div>
             ) : null}

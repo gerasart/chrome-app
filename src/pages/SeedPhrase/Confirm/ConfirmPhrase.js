@@ -4,9 +4,13 @@ import main from '../../../components/Main.module.scss';
 import confirm_phrase from './ConfirmPhrase.module.css';
 import {Link} from "react-router-dom";
 import Header from "../../../components/Header/Header";
+import {useDispatch} from 'react-redux';
+import {setPhrase} from "../../../store/slices/user";
 
 export default function ConfirmPhrase() {
     const phrase = useSelector((state) => state.user.phrase);
+    const dispatch = useDispatch();
+
     const [randomPhrase] = useState(
         phrase
             .split(' ')
@@ -27,6 +31,15 @@ export default function ConfirmPhrase() {
         randomPhrase[i].disabled = true;
         setConfirmPhrase([...arr]);
     };
+
+    function seedPhraseHD() {
+        let Mnemonic = require('bitcore-mnemonic');
+        let code = new Mnemonic(Mnemonic.phrase);
+        let phrasePrivate = code.toHDPrivateKey();
+        dispatch(setPhrase(phrasePrivate.xprivkey));
+
+        chrome.storage.local.set({phrase: phrasePrivate.xprivkey}, function () {})
+    }
 
     const removeWord = (e) => {
         if (e.target.innerHTML) {
@@ -87,7 +100,7 @@ export default function ConfirmPhrase() {
             </div>
 
             <button
-                onClick={() => console.log('TRUE')}
+                onClick={seedPhraseHD}
                 disabled={!(phrase === confirmPhrase.join(' '))}
                 className={confirm_phrase.btn}
             >
@@ -98,3 +111,6 @@ export default function ConfirmPhrase() {
         </div>
     );
 }
+
+
+//  choice category cricket paddle year fatigue slender tennis now dinosaur defy where
