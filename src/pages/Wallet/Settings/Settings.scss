@@ -1,0 +1,35 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  &_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 1rem;
+  }
+
+  &_item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d6d9dc;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+
+    &:hover {
+      background: #f2f3f4;
+    }
+
+    .name {
+      padding: 15px 1rem;
+    }
+    .arrow {
+      padding: 10px 1rem;
+    }
+  }
+}

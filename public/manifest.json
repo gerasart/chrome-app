@@ -1,17 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Swap app",
-  "author": "GM",
-  "version": "1.0.2",
+  "name": "Holduz",
+  "author": "Swapuz",
+  "version": "1.0.0",
   "description": "swap app",
-  "icons": {
-    "16": "16.png",
-    "48": "48.png",
-    "128": "128.png"
-  },
   "action": {
-    "default_title": "Swap app",
-    "default_popup": "index.html"
+    "default_title": "Holduz",
+    "default_popup": "index.html",
+    "default_page": "popup.html"
   },
   "commands": {
     "_execute_browser_action": {

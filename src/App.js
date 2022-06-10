@@ -1,4 +1,4 @@
-import { MemoryRouter as Router, Route, Routes } from 'react-router-dom';
+import {MemoryRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from '../src/components/Home/Home';
 import './App.css';
 import Information from "./components/Information/Information";
@@ -10,6 +10,9 @@ import ConfirmPhrase from "./pages/SeedPhrase/Confirm/ConfirmPhrase";
 import SeedPhrase from "./pages/SeedPhrase/SeedPhrase";
 import SelectAction from "./pages/SelectAction/SelectAction";
 import Welcome from "./pages/Welcome/Welcome";
+import Greetings from "./pages/SeedPhrase/Greetings/Greetings";
+import Account from "./pages/Wallet/Account/Account.js";
+import Settings from "./pages/Wallet/Settings/Settings";
 
 function App() {
     return (
@@ -22,9 +25,12 @@ function App() {
                     <Route exact path="/create-password" element={<PasswordCreate/>}/>
                     <Route exact path="/seed-phrase" element={<SeedPhrase/>}/>
                     <Route exact path="/seed-phrase/confirm" element={<ConfirmPhrase/>}/>
+                    <Route exact path="/greetings" element={<Greetings/>}/>
+                    <Route exact path="/settings" element={<Settings/>}/>
                     <Route exact path="/import-with-seed-phrase" element={<ImportPhrase/>}/>
                     <Route exact path="/select-action" element={<SelectAction/>}/>
                     <Route exact path="/information" element={<Information/>}/>
+                    <Route exact path="/account" element={<Account/>}/>
                 </Routes>
             </Layout>
         </Router>
@@ -32,3 +38,4 @@ function App() {
 }
 
 export default App;
+

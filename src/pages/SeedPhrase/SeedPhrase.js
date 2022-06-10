@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import main from '../../components/Main.module.scss';
 import { setPhrase } from '../../store/slices/user';
 import secret_phrase from './SeedPhrase.module.css';
+import Header from "../../components/Header/Header";
 
 let Mnemonic = require('bitcore-mnemonic');
 let code = new Mnemonic();
@@ -19,6 +20,7 @@ export default function SeedPhrase() {
 
   return (
     <div className={secret_phrase.SecretPhrase}>
+        <Header />
       <div className={main.h1}>
         Secret recovery phrase
         {isShow}

@@ -1,10 +1,12 @@
 import React from 'react';
 import phrase from './ImportPhrase.module.css'
 import main from '../../components/Main.module.scss'
+import Header from "../../components/Header/Header";
 
 export default function ImportPhrase() {
     return (
         <div className={phrase.Phrase}>
+            <Header/>
             <div className={main.h1}>
                 Import wallet with recovery passphrase
             </div>

@@ -1,0 +1,118 @@
+.account_header {
+  background: #F2F3F4;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .networks {
+      display: flex;
+      flex-direction: row;
+      max-width: 150px;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #a9a9a9;
+      border-radius: 20px;
+      padding: 3px 9px;
+
+      &_circle {
+        background: #29b6af;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+
+      &_name {
+        font-size: 12px;
+        margin: 0 10px 0 7px;
+        color: #535a61;
+      }
+    }
+
+    .account_avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid #037dd6;
+      margin-left: 15px;
+      background: #c81452;
+      cursor: pointer;
+    }
+
+    .account_menu {
+      position: absolute;
+      z-index: 100;
+      top: 58px;
+      right: 1rem;
+      width: 320px;
+      border-radius: 4px;
+      background: white;
+      box-shadow: rgb(0 0 0 / 15%) 0 2px 2px 2px;
+      min-width: 150px;
+
+      &--title {
+        border-bottom: 1px solid #d6d9dc;
+        padding: 20px 1rem;
+      }
+
+      &--accounts{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #d6d9dc;
+        padding: 20px 1rem;
+
+        &_item {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+
+          .active {
+            margin-right: 10px;
+            color: #62df62;
+            line-height: 1;
+          }
+
+          .account_name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .name {
+              font-size: 16px;
+              color: #5b5b5b;
+              line-height: 1;
+            }
+
+            .coins {
+              color: #bbc0c5;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .border {
+        border-top: 1px solid #d6d9dc;
+      }
+
+      &--item {
+        padding: 15px 1rem;
+      }
+    }
+  }
+}
+
+

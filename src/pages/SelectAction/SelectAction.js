@@ -2,10 +2,12 @@ import React from "react";
 import action from './SelectAction.module.scss'
 import main from "../../components/Main.module.scss";
 import {Link} from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 export default function SelectAction() {
     return (
         <div className={action.Action}>
+            <Header/>
             <div className={main.h1}>
                 First time in Chrome app?
             </div>
