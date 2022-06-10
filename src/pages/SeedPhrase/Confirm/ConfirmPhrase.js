@@ -37,7 +37,6 @@ export default function ConfirmPhrase() {
         let code = new Mnemonic(Mnemonic.phrase);
         let phrasePrivate = code.toHDPrivateKey();
         dispatch(setPhrase(phrasePrivate.xprivkey));
-
         chrome.storage.local.set({phrase: phrasePrivate.xprivkey}, function () {})
     }
 
@@ -98,19 +97,19 @@ export default function ConfirmPhrase() {
                     );
                 })}
             </div>
-
-            <button
-                onClick={seedPhraseHD}
-                disabled={!(phrase === confirmPhrase.join(' '))}
-                className={confirm_phrase.btn}
-            >
-                <Link to="/greetings">
+            <Link to="/greetings">
+                <button
+                    onClick={seedPhraseHD}
+                    disabled={!(phrase === confirmPhrase.join(' '))}
+                    className={confirm_phrase.btn}
+                >
                     Continue
-                </Link>
-            </button>
+                </button>
+            </Link>
+
         </div>
     );
 }
 
 
-//  choice category cricket paddle year fatigue slender tennis now dinosaur defy where
+//  retire later barrel captain fossil tackle dignity early evolve render glass cherry

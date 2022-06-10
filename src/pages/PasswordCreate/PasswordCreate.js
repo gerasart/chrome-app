@@ -24,7 +24,8 @@ export default function PasswordCreate() {
         let pinPrivate = code.toHDPrivateKey();
 
         dispatch(setPinCode(pinPrivate.xprivkey));
-        chrome.storage.local.set({pinCode: pinPrivate.xprivkey}, function () {})
+        chrome.storage.local.set({pinCode: pinPrivate.xprivkey}, function () {
+        })
     }
 
     function testClick() {
@@ -92,6 +93,8 @@ export default function PasswordCreate() {
                 </div>
             ) : null}
         </>
-
     )
 }
+
+
+// together relief will manage option rely all clown salad burst whale speed
