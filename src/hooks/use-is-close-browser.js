@@ -11,7 +11,6 @@ export default function useIsCloseBrowser() {
             const icb = await extensionStore.get("isCloseBrowser");
             if (icb) {
                 dispatch(setIsCloseBrowser(true));
-                await extensionStore.set("isCloseBrowser", false);
             } else {
                 dispatch(setIsCloseBrowser(false));
             }

@@ -19,6 +19,7 @@ export default function WelcomeBack() {
         e.preventDefault();
         const isAuth = verify(pin, encryptedPin);
         if (isAuth) {
+            await extensionStore.set("isCloseBrowser", false);
             dispatch(setIsCloseBrowser(false));
             navigate("/");
         }
