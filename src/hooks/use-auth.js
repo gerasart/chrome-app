@@ -12,9 +12,9 @@ export default function useAuth() {
             const phrase = await extensionStore.get("phrase");
             const pinCode = await extensionStore.get("pinCode");
             if (phrase && pinCode) {
-                dispatch(setIsAuth(true));
                 dispatch(setPinCode(pinCode));
                 dispatch(setPhrase(phrase));
+                dispatch(setIsAuth(true));
             } else {
                 dispatch(setIsAuth(false));
             }

@@ -1,27 +1,30 @@
 {
-  "manifest_version": 3,
-  "name": "Holduz",
-  "author": "Swapuz",
-  "version": "1.0.0",
-  "description": "swap app",
-  "action": {
-    "default_title": "Holduz",
-    "default_popup": "index.html",
-    "default_page": "popup.html"
-  },
-  "commands": {
-    "_execute_browser_action": {
-      "suggested_key": {
-        "windows": "Alt+Shift+S",
-        "mac": "Alt+Shift+S",
-        "chromeos": "Alt+Shift+S",
-        "linux": "Alt+Shift+S"
-      }
+    "manifest_version": 3,
+    "name": "Holduz",
+    "author": "Swapuz",
+    "version": "1.0.0",
+    "description": "swap app",
+    "action": {
+        "default_title": "Holduz",
+        "default_popup": "index.html",
+        "default_page": "popup.html"
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "windows": "Alt+Shift+S",
+                "mac": "Alt+Shift+S",
+                "chromeos": "Alt+Shift+S",
+                "linux": "Alt+Shift+S"
+            }
+        }
+    },
+    "permissions": [
+        "tabs",
+        "bookmarks",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
     }
-  },
-  "permissions": [
-    "tabs",
-    "bookmarks",
-    "storage"
-  ]
 }

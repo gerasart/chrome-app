@@ -21,10 +21,21 @@ const userSlice = createSlice({
         setIsCloseBrowser(state, action) {
             state.isCloseBrowser = action.payload;
         },
+        clearStore(state) {
+            state.isCloseBrowser = false;
+            state.isAuth = false;
+            state.phrase = "";
+            state.pinCode = "";
+        },
     },
 });
 
-export const { setPhrase, setPinCode, setIsAuth } = userSlice.actions;
+export const {
+    setPhrase,
+    setPinCode,
+    setIsAuth,
+    setIsCloseBrowser,
+    clearStore,
+} = userSlice.actions;
 
 export default userSlice.reducer;
-

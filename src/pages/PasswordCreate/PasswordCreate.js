@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import main from "../../components/Main.module.scss";
 import extensionStore from "../../helper/local-store";
+import { hash } from "../../helper/password";
 import { setPinCode } from "../../store/slices/user";
 import "./PasswordCreate.scss";
 
@@ -19,11 +20,9 @@ export default function PasswordCreate() {
         ref.current.forEach((input) => (input.value = ""));
         setConfirmPin(true);
 
-        let Mnemonic = require("bitcore-mnemonic");
-        let code = new Mnemonic(Mnemonic.pinCode);
-        let pinPrivate = code.toHDPrivateKey();
-        await extensionStore.set("pinCode", pinPrivate.xprivkey);
-        dispatch(setPinCode(pinPrivate.xprivkey));
+        const encryptedPin = hash(pin);
+        await extensionStore.set("pinCode", encryptedPin);
+        dispatch(setPinCode(encryptedPin));
     }
 
     return (
@@ -75,4 +74,3 @@ export default function PasswordCreate() {
 }
 
 // together relief will manage option rely all clown salad burst whale speed
-

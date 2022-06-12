@@ -4,33 +4,40 @@ import "./App.css";
 import Information from "./components/Information/Information";
 import Layout from "./components/Layout/Layout";
 import useAuth from "./hooks/use-auth";
+import useIsCloseBrowser from "./hooks/use-is-close-browser";
 import ImportPhrase from "./pages/ImportPhrase/ImportPhrase";
 import PasswordCreate from "./pages/PasswordCreate/PasswordCreate";
-import Privacy from "./pages/privacy/Privacy";
+import Privacy from "./pages/Privacy/Privacy";
 import ConfirmPhrase from "./pages/SeedPhrase/Confirm/ConfirmPhrase";
 import Greetings from "./pages/SeedPhrase/Greetings/Greetings";
 import SeedPhrase from "./pages/SeedPhrase/SeedPhrase";
 import SelectAction from "./pages/SelectAction/SelectAction";
 import Account from "./pages/Wallet/Account/Account.js";
 import Settings from "./pages/Wallet/Settings/Settings";
+import WelcomeBack from "./pages/Wallet/WelcomeBack/WelcomeBack";
 import Welcome from "./pages/Welcome/Welcome";
 
 function App() {
     const isAuth = useAuth();
+    const isCloseBrowser = useIsCloseBrowser();
 
     return (
         <Router>
             <Layout>
                 <Routes>
                     {isAuth ? (
-                        <>
-                            <Route exact path="/" element={<Account />} />
-                            <Route
-                                exact
-                                path="/settings"
-                                element={<Settings />}
-                            />
-                        </>
+                        isCloseBrowser ? (
+                            <Route exact path="/" element={<WelcomeBack />} />
+                        ) : (
+                            <>
+                                <Route exact path="/" element={<Account />} />
+                                <Route
+                                    exact
+                                    path="/settings"
+                                    element={<Settings />}
+                                />
+                            </>
+                        )
                     ) : (
                         <>
                             <Route exact path="/" element={<Welcome />} />
@@ -80,4 +87,3 @@ function App() {
 }
 
 export default App;
-
