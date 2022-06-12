@@ -1,43 +1,35 @@
-import React from "react";
-import {useState} from 'react';
-import main from '../../../components/Main.module.scss'
-import './Account.scss'
-import Header from "../../../components/Account/Header/Header";
-import AccountAmount from "./Partials/AccountAmount/AccountAmount";
-
+import { useState } from 'react';
+import Header from '../../../components/Account/Header/Header';
+import main from '../../../components/Main.module.scss';
+import './Account.scss';
+import AccountAmount from './Partials/AccountAmount/AccountAmount';
 
 export default function Account() {
     const [activeTab, setActiveTab] = useState('Assets');
 
-
     return (
         <div className={main}>
-            <Header/>
+            <Header />
             <div className={main.AccountLayout}>
                 <div className="account-main">
                     <div className="account-header">
-                        <div className="empty">
-                        </div>
+                        <div className="empty"></div>
                         <div className="account-header-copy">
-                            <div className="title">
-                                Account 1
-                            </div>
-                            <div className="id">
-                                0xb12...6bf8
-                            </div>
+                            <div className="title">Account 1</div>
+                            <div className="id">0xb12...6bf8</div>
                         </div>
-                        <div className="account-header-menu">
-                            ...
-                        </div>
+                        <div className="account-header-menu">...</div>
                     </div>
                     <div className="account-info">
-                        <AccountAmount/>
+                        <AccountAmount />
 
                         <div className="account-tabs">
                             <div className="account-tabs-control">
                                 <div
                                     className={
-                                        activeTab === 'Assets' ? 'account-tabs-control-tab active' : 'account-tabs-control-tab'
+                                        activeTab === 'Assets'
+                                            ? 'account-tabs-control-tab active'
+                                            : 'account-tabs-control-tab'
                                     }
                                     onClick={() => setActiveTab('Assets')}
                                 >
@@ -45,7 +37,9 @@ export default function Account() {
                                 </div>
                                 <div
                                     className={
-                                        activeTab === 'Activity' ? 'account-tabs-control-tab active' : 'account-tabs-control-tab'
+                                        activeTab === 'Activity'
+                                            ? 'account-tabs-control-tab active'
+                                            : 'account-tabs-control-tab'
                                     }
                                     onClick={() => setActiveTab('Activity')}
                                 >
@@ -60,24 +54,24 @@ export default function Account() {
                                             <div className="amount">
                                                 <div className="img">E</div>
                                                 <div className="text">
-                                                    <div className="coin">0 ETH</div>
-                                                    <div className="dol">$0.00 USD</div>
+                                                    <div className="coin">
+                                                        0 ETH
+                                                    </div>
+                                                    <div className="dol">
+                                                        $0.00 USD
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="img"> ></div>
+                                            <div className="img"></div>
                                         </div>
                                         <div className="desc">
                                             Don't see your token?
                                             <div className="desc-links">
                                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                <a href="#">
-                                                    Refresh list
-                                                </a>
+                                                <a href="#">Refresh list</a>
                                                 or
                                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                <a href="#">
-                                                    import token
-                                                </a>
+                                                <a href="#">import token</a>
                                             </div>
                                         </div>
                                     </div>
@@ -97,5 +91,5 @@ export default function Account() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

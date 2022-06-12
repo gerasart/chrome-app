@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import main from "../../../components/Main.module.scss";
-import { setIsAuth } from "../../../store/slices/user";
-import greetings from "./Greetings.module.scss";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import main from '../../../components/Main.module.scss';
+import { setIsAuth } from '../../../store/slices/user';
+import greetings from './Greetings.module.scss';
 
 export default function Greetings() {
     const dispatch = useDispatch();

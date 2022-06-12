@@ -3,13 +3,13 @@ import logger from 'redux-logger';
 import userReducer from './slices/user';
 
 const reducer = {
-  user: userReducer,
+    user: userReducer,
 };
 
 const store = configureStore({
-  reducer: reducer,
-  devTools: true,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    reducer: reducer,
+    devTools: true,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default store;

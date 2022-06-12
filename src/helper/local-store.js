@@ -32,14 +32,18 @@ const extensionStore = {
                     return reject(chrome.runtime.lastError);
                 }
                 Object.keys(result).forEach((key) => {
-                    if (typeof result[key] === "string") {
-                        this.set(key, "");
-                    }
-                    if (typeof result[key] === "boolean") {
-                        this.set(key, false);
-                    }
-                    if (typeof result[key] === "number") {
-                        this.set(key, 0);
+                    switch (typeof result[key]) {
+                        case 'string':
+                            this.set(key, '');
+                            break;
+                        case 'boolean':
+                            this.set(key, false);
+                            break;
+                        case 'number':
+                            this.set(key, 0);
+                            break;
+                        default:
+                            break;
                     }
                 });
                 resolve();

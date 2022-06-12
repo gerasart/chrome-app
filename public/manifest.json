@@ -6,8 +6,7 @@
     "description": "swap app",
     "action": {
         "default_title": "Holduz",
-        "default_popup": "index.html",
-        "default_page": "popup.html"
+        "default_popup": "index.html"
     },
     "commands": {
         "_execute_browser_action": {

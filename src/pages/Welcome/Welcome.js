@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import main from "../../components/Main.module.scss";
-import welcome from "./Welcome.module.scss";
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import main from '../../components/Main.module.scss';
+import welcome from './Welcome.module.scss';
 
 export default function Welcome() {
     return (
@@ -24,4 +24,3 @@ export default function Welcome() {
     );
 }
 // abstract volume inspire buyer elbow bike name enemy yellow grab often guitar
-

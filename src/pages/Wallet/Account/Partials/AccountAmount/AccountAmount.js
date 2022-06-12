@@ -1,18 +1,11 @@
-import React from "react";
 
 export default function AccountAmount() {
     return (
         <div className="AccountAmount">
-            <div className="img">
-                img
-            </div>
+            <div className="img">img</div>
             <div className="account-amount">
-                <div className="coin">
-                    0 ETH
-                </div>
-                <div className="dol">
-                    $0.00 USD
-                </div>
+                <div className="coin">0 ETH</div>
+                <div className="dol">$0.00 USD</div>
             </div>
             <div className="account-trade">
                 <div className="account-trade_item">
@@ -29,5 +22,5 @@ export default function AccountAmount() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

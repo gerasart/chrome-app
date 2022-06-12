@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import extensionStore from "../helper/local-store";
-import { setIsCloseBrowser } from "../store/slices/user";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import extensionStore from '../helper/local-store';
+import { setIsCloseBrowser } from '../store/slices/user';
 
 export default function useIsCloseBrowser() {
     const isCloseBrowser = useSelector((state) => state.user.isCloseBrowser);
     const dispatch = useDispatch();
     useEffect(() => {
         async function getIsCloseBrowser() {
-            const icb = await extensionStore.get("isCloseBrowser");
+            const icb = await extensionStore.get('isCloseBrowser');
             if (icb) {
                 dispatch(setIsCloseBrowser(true));
             } else {

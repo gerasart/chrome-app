@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const userSlice = createSlice({
-    name: "user",
+    name: 'user',
     initialState: {
         isCloseBrowser: false,
         isAuth: false,
-        phrase: "",
-        pinCode: "",
+        phrase: '',
+        pinCode: '',
     },
     reducers: {
         setPhrase(state, action) {
@@ -24,8 +24,8 @@ const userSlice = createSlice({
         clearStore(state) {
             state.isCloseBrowser = false;
             state.isAuth = false;
-            state.phrase = "";
-            state.pinCode = "";
+            state.phrase = '';
+            state.pinCode = '';
         },
     },
 });

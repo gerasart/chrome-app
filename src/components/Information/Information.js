@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Information.module.scss';
-import {Link} from "react-router-dom";
 
 class Information extends React.Component {
     // eslint-disable-next-line no-useless-constructor

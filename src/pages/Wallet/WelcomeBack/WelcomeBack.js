@@ -1,34 +1,34 @@
-import { useRef, useState } from "react";
-import PinField from "react-pin-field";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import Header from "../../../components/Header/Header";
-import main from "../../../components/Main.module.scss";
-import extensionStore from "../../../helper/local-store";
-import { verify } from "../../../helper/password";
-import { clearStore, setIsCloseBrowser } from "../../../store/slices/user";
+import { useRef, useState } from 'react';
+import PinField from 'react-pin-field';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Header from '../../../components/Header/Header';
+import main from '../../../components/Main.module.scss';
+import { verify } from '../../../facades/password';
+import extensionStore from '../../../helper/local-store';
+import { clearStore, setIsCloseBrowser } from '../../../store/slices/user';
 
 export default function WelcomeBack() {
-    const [pin, setPin] = useState("");
+    const [pin, setPin] = useState('');
     const navigate = useNavigate();
     const encryptedPin = useSelector((state) => state.user.pinCode);
     const dispatch = useDispatch();
-    const ref = useRef("");
+    const ref = useRef('');
 
     async function handlerPin(e) {
         e.preventDefault();
         const isAuth = verify(pin, encryptedPin);
         if (isAuth) {
-            await extensionStore.set("isCloseBrowser", false);
+            await extensionStore.set('isCloseBrowser', false);
             dispatch(setIsCloseBrowser(false));
-            navigate("/");
+            navigate('/');
         }
     }
 
     async function exit() {
         await extensionStore.clear();
         dispatch(clearStore());
-        navigate("/");
+        navigate('/');
     }
     return (
         <div className="WelcomeBack">

@@ -1,12 +1,7 @@
+import extensionStore from '../helper/local-store';
+
 async function addListenerOnRemove() {
-    await new Promise((resolve, reject) => {
-        chrome.storage.local.set({ "isCloseBrowser": true }, () => {
-            if (chrome.runtime.lastError) {
-                return reject(chrome.runtime.lastError);
-            }
-            resolve();
-        });
-    });
+    await extensionStore.set('isCloseBrowser', true);
 }
 
 chrome.windows.onRemoved.addListener(addListenerOnRemove);

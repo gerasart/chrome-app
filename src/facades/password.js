@@ -1,4 +1,4 @@
-import CryptoJS from "crypto-js";
+import CryptoJS from 'crypto-js';
 
 export function hash(password) {
     return CryptoJS.AES.encrypt(

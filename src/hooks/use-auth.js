@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import extensionStore from "../helper/local-store";
-import { setIsAuth, setPhrase, setPinCode } from "../store/slices/user";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import extensionStore from '../helper/local-store';
+import { setIsAuth, setPhrase, setPinCode } from '../store/slices/user';
 
 export default function useAuth() {
     const dispatch = useDispatch();
@@ -9,8 +9,8 @@ export default function useAuth() {
 
     useEffect(() => {
         async function getAuth() {
-            const phrase = await extensionStore.get("phrase");
-            const pinCode = await extensionStore.get("pinCode");
+            const phrase = await extensionStore.get('phrase');
+            const pinCode = await extensionStore.get('pinCode');
             if (phrase && pinCode) {
                 dispatch(setPinCode(pinCode));
                 dispatch(setPhrase(phrase));
@@ -23,4 +23,3 @@ export default function useAuth() {
     }, [dispatch]);
     return isAuth;
 }
-

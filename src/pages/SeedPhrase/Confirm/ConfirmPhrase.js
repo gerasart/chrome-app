@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import Header from "../../../components/Header/Header";
-import main from "../../../components/Main.module.scss";
-import extensionStore from "../../../helper/local-store";
-import { setPhrase } from "../../../store/slices/user";
-import confirm_phrase from "./ConfirmPhrase.module.css";
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Header from '../../../components/Header/Header';
+import main from '../../../components/Main.module.scss';
+import extensionStore from '../../../helper/local-store';
+import { setPhrase } from '../../../store/slices/user';
+import confirm_phrase from './ConfirmPhrase.module.css';
 
 export default function ConfirmPhrase() {
     const phrase = useSelector((state) => state.user.phrase);
@@ -13,7 +13,7 @@ export default function ConfirmPhrase() {
 
     const [randomPhrase] = useState(
         phrase
-            .split(" ")
+            .split(' ')
             .sort(() => Math.random() - 0.5)
             .map((item, index) => {
                 return {
@@ -23,20 +23,20 @@ export default function ConfirmPhrase() {
             })
     );
     const [confirmPhrase, setConfirmPhrase] = useState(
-        phrase.split(" ").map(() => "")
+        phrase.split(' ').map(() => '')
     );
     const selectWord = (e, i) => {
         const arr = confirmPhrase;
-        arr[arr.indexOf("")] = e.target.innerHTML;
+        arr[arr.indexOf('')] = e.target.innerHTML;
         randomPhrase[i].disabled = true;
         setConfirmPhrase([...arr]);
     };
 
     async function seedPhraseHD() {
-        let Mnemonic = require("bitcore-mnemonic");
+        let Mnemonic = require('bitcore-mnemonic');
         let code = new Mnemonic(Mnemonic.phrase);
         let phrasePrivate = code.toHDPrivateKey();
-        await extensionStore.set("phrase", phrasePrivate.xprivkey);
+        await extensionStore.set('phrase', phrasePrivate.xprivkey);
         dispatch(setPhrase(phrasePrivate.xprivkey));
     }
 
@@ -49,8 +49,8 @@ export default function ConfirmPhrase() {
                     item.disabled = false;
                 }
             });
-            e.target.innerHTML = "";
-            arr[index] = "";
+            e.target.innerHTML = '';
+            arr[index] = '';
             setConfirmPhrase([...arr]);
         }
     };
@@ -86,7 +86,7 @@ export default function ConfirmPhrase() {
                             className={
                                 item.disabled
                                     ? confirm_phrase.phrase_word +
-                                      " " +
+                                      ' ' +
                                       confirm_phrase.is_disabled
                                     : confirm_phrase.phrase_word
                             }
@@ -100,7 +100,7 @@ export default function ConfirmPhrase() {
             <Link to="/greetings">
                 <button
                     onClick={seedPhraseHD}
-                    disabled={!(phrase === confirmPhrase.join(" "))}
+                    disabled={!(phrase === confirmPhrase.join(' '))}
                     className={confirm_phrase.btn}
                 >
                     Continue
