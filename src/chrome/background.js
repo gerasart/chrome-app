@@ -1,5 +1,11 @@
 import extensionStore from '../helper/local-store';
 
+async function saveTabsLength() {
+    chrome.tabs.query({}, async function (tabs) {
+        await extensionStore.set('numTabs', tabs.length);
+    });
+}
+
 async function addListenerOnCreate() {
     const prevNumTabs = await extensionStore.get('numTabs');
     console.log(prevNumTabs);
