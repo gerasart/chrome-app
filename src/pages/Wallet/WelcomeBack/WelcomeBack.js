@@ -7,6 +7,7 @@ import main from '../../../components/Main.module.scss';
 import { verify } from '../../../facades/password';
 import extensionStore from '../../../helper/local-store';
 import { clearStore, setIsCloseBrowser } from '../../../store/slices/user';
+import './WelcomeBack.scss';
 
 export default function WelcomeBack() {
     const [pin, setPin] = useState('');

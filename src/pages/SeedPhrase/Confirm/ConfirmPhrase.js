@@ -110,4 +110,3 @@ export default function ConfirmPhrase() {
     );
 }
 
-//  retire later barrel captain fossil tackle dignity early evolve render glass cherry
