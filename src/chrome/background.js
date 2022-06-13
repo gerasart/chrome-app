@@ -10,17 +10,12 @@ async function addListenerOnCreate() {
     });
 }
 
-async function addListenerOnCreated() {
-    chrome.tabs.query({}, async function (tabs) {
-        await extensionStore.set('numTabs', tabs.length);
-    });
-}
-async function addListenerOnRemoved() {
-    chrome.tabs.query({}, async function (tabs) {
+async function addListenerSaveTabsLength() {
+    await chrome.tabs.query({}, async function (tabs) {
         await extensionStore.set('numTabs', tabs.length);
     });
 }
 
 chrome.windows.onCreated.addListener(addListenerOnCreate);
-chrome.tabs.onCreated.addListener(addListenerOnCreated);
-chrome.tabs.onRemoved.addListener(addListenerOnRemoved);
+chrome.tabs.onCreated.addListener(addListenerSaveTabsLength);
+chrome.tabs.onRemoved.addListener(addListenerSaveTabsLength);
