@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import extensionStore from '../helper/local-store';
+import extensionStore from '../store/local-store';
 import { setIsAuth, setPhrase, setPinCode } from '../store/slices/user';
 
 export default function useAuth() {

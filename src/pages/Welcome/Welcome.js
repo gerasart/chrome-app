@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import main from '../../components/Main.module.scss';
 import welcome from './Welcome.module.scss';
+import '../../assets/styles/global/_global.scss'
 
 export default function Welcome() {
     return (
@@ -13,14 +14,9 @@ export default function Welcome() {
                 <br />
                 We're glad to see you.
             </div>
-            <Link to="/select-action" className={main.btn}>
+            <Link to="/select-action" className="btn_main">
                 Start
-            </Link>
-
-            <Link to="/account" className={main.btn}>
-                Account
             </Link>
         </div>
     );
 }
-// abstract volume inspire buyer elbow bike name enemy yellow grab often guitar

@@ -1,0 +1,137 @@
+.header {
+    &_back {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-bottom: 16px;
+        cursor: pointer;
+
+        img {
+            transition: all .2s ease-in-out;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.container {
+    &_app {
+        max-width: 100%;
+        padding: 16px;
+        margin: 0;
+        height: 100%;
+    }
+}
+
+.content_block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.text {
+    &_h1 {
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 36px;
+        color: #FFFFFF;
+    }
+
+    &_h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+
+    &_h3 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+    }
+
+    &_h4 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+
+    &_p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        color: #FFFFFF;
+    }
+}
+
+.btn {
+    &_main {
+        background: linear-gradient(226.97deg, #1C92FF -3.69%, #CB73FC 100%);
+        border-radius: 14px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        width: 100%;
+        padding: 16px 0;
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            background: linear-gradient(43.08deg, #1C92FF -19.8%, #CB73FC 97.54%);
+        }
+    }
+
+    &_disabled {
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.4);
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    &_outlined {
+        width: 100%;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        position: relative;
+        padding: 16px 0;
+        box-sizing: border-box;
+        $border: 2px;
+        background: #101018;
+        background-clip: padding-box;
+        border: solid $border transparent;
+        border-radius: 14px;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -$border;
+            border-radius: inherit;
+            background: linear-gradient(226.97deg, #1C92FF -3.69%, #CB73FC 100%);
+        }
+    }
+}

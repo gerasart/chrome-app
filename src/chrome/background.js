@@ -1,4 +1,4 @@
-import extensionStore from '../helper/local-store';
+import extensionStore from '../store/local-store';
 
 async function addListenerOnCreate() {
     const prevNumTabs = await extensionStore.get('numTabs');

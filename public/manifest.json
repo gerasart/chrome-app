@@ -1,9 +1,14 @@
 {
     "manifest_version": 3,
-    "name": "Holduz",
+    "name": "Holduz-dev-Chrome",
     "author": "Swapuz",
-    "version": "1.0.0",
-    "description": "swap app",
+    "version": "0.0.1",
+    "description": "Working Chrome Extension 0.2",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
     "action": {
         "default_title": "Holduz",
         "default_popup": "index.html"

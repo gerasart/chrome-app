@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../../components/Header/Header';
 import main from '../../../components/Main.module.scss';
 import { verify } from '../../../facades/password';
-import extensionStore from '../../../helper/local-store';
+import extensionStore from '../../../store/local-store';
 import { clearStore, setIsCloseBrowser } from '../../../store/slices/user';
 import './WelcomeBack.scss';
 

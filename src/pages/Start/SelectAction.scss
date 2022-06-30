@@ -1,0 +1,32 @@
+.select-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+
+        img {
+            margin-bottom: 40px;
+        }
+
+        .text_p {
+            margin-top: 12px;
+            text-align: center;
+        }
+    }
+
+    .btns {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        a:first-child {
+            margin-bottom: 12px;
+        }
+    }
+}
