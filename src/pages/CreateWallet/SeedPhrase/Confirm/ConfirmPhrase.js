@@ -85,27 +85,26 @@ export default function ConfirmPhrase() {
                 })}
             </div>
 
-            <div className="phrase_input">
-                {randomPhrase.map((item, index) => {
-                    return (
-                        <div
-                            onClick={(e) => selectWord(e, index)}
-                            className={
-                                item.disabled
-                                    ? "phrase_word" +
-                                      ' ' +
-                                      "is_disabled"
-                                    : "phrase_word"
-                            }
-                            key={index}
-                        >
-                            {item.value}
-                        </div>
-                    );
-                })}
-            </div>
             {!(phrase === confirmPhrase.join(' ')) ? (
-                <div className="btn_disabled"> Accept </div>
+                <div className="phrase_input">
+                    {randomPhrase.map((item, index) => {
+                        return (
+                            <div
+                                onClick={(e) => selectWord(e, index)}
+                                className={
+                                    item.disabled
+                                        ? "phrase_word" +
+                                        ' ' +
+                                        "is_disabled"
+                                        : "phrase_word"
+                                }
+                                key={index}
+                            >
+                                {item.value}
+                            </div>
+                        );
+                    })}
+                </div>
             ) : (phrase === confirmPhrase.join(' ')) ? (
                 <Link to="/greetings" >
                     <div onClick={seedPhraseHD} className="btn_main">Continue</div>
