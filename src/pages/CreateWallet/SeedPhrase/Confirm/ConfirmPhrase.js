@@ -103,8 +103,10 @@ export default function ConfirmPhrase() {
                                 onClick={(e) => selectWord(e, index)}
                                 className={
                                     item.disabled
-                                        ? 'phrase_word' + ' ' + 'is_disabled'
-                                        : 'phrase_word'
+                                        ? "phrase_word" +
+                                        ' ' +
+                                        "is_disabled"
+                                        : "phrase_word"
                                 }
                                 key={index}
                             >
@@ -113,11 +115,10 @@ export default function ConfirmPhrase() {
                         );
                     })}
                 </div>
-            ) : phrase === confirmPhrase.join(' ') ? (
-                <Link to="/greetings">
-                    <div onClick={seedPhraseHD} className="btn_main">
-                        Continue
-                    </div>
+
+            ) : (phrase === confirmPhrase.join(' ')) ? (
+                <Link to="/greetings" >
+                    <div onClick={seedPhraseHD} className="btn_main">Continue</div>
                 </Link>
             ) : null}
         </div>
